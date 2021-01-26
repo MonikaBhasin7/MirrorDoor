@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextViewStyle" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:fontFamily">@font/titillium_web</item>
+    </style>
+
+    <style name="CustomButton">
+        <item name="android:background">@drawable/bg_button_yellow_normal</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/titillium_web_semibold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

@@ -1,3 +1,481 @@
-<resources>
-    <string name="app_name">Base</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">pwcore</string>
+    <string name="title_activity_auth">Sign in</string>
+
+    <!-- Strings related to VolleyError -->
+    <string name="generic_server_down">Server not responding</string>
+    <string name="generic_error">Check your connection and try again</string>
+    <string name="no_internet">Internet not available</string>
+    <string name="resource_not_found">Resource not found</string>
+    <string name="error_unauthorized">Your session has expired. Please login again.</string>
+    <string name="server_error">Unable to reach our servers</string>
+    <string name="timeout_error">Looks like your internet connection is slow. Please check your connection and try again.</string>
+
+    <!-- Strings related to login -->
+    <string name="not_a_member">Not a member?</string>
+    <string name="new_member_sign_up">Sign up now.</string>
+    <string name="prompt_tag_id">Parkwheels Tag ID*</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_contact_number">Enter Phone number</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="forgot_password">Cannot access your account?</string>
+    <string name="error_invalid_tag_id">This tag id is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_contact_number">Please Enter a valid phone number</string>
+
+
+    <!-- Strings related to register -->
+    <string name="already_a_member">Already a member?</string>
+    <string name="prompt_secret_code">Parkwheels code*</string>
+    <string name="action_register">Register</string>
+    <string name="action_register_short">Sign up</string>
+    <string name="already_member_sign_in">Already a member? Sign in here.</string>
+    <string name="text_request_tag">I want to buy Parkwheels Tag</string>
+
+    <!-- Strings related to request tag -->
+    <string name="title_full_name">Full Name*</string>
+    <string name="button_request_tag">REQUEST TAG</string>
+    <string name="request_tag_address">Delivery address*</string>
+    <string name="request_tag_city">City*</string>
+    <string name="request_tag_state">State*</string>
+    <string name="request_tag_code">Referral code</string>
+
+
+    <!-- Strings related to user profile form -->
+    <string name="complete_profile_heading">Almost there!</string>
+    <string name="complete_profile_sub_heading">Please fill the following details</string>
+    <string name="hint_first_name">First Name*</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_phone_number">Phone number*</string>
+    <string name="hint_email_id">Email id*</string>
+    <string name="hint_vehicle_number">Vehicle number*</string>
+    <string name="action_submit">Submit</string>
+    <string name="action_submit_short">Done</string>
+    <string name="error_invalid_name">Enter correct name</string>
+    <string name="error_invalid_phone">Enter correct phone number</string>
+    <string name="error_invalid_email">Enter correct email id</string>
+    <string name="error_invalid_vehicle_number">Enter correct vehicle number</string>
+    <string name="error_invalid_address">Enter valid address</string>
+    <string name="error_invalid_city">Enter valid city</string>
+    <string name="error_invalid_state">Enter valid state</string>
+
+
+    <!-- Strings related to Forgot Password -->
+    <string name="hint_enter_email">Enter Email id</string>
+    <string name="button_reset_password">Reset Password</string>
+    <string name="text_resolution">Check your email for new password. Login with new password and
+    then change your password once you are logged in.</string>
+    <string name="text_resolution_post_script">Note: If it is not in inbox, please check the spam
+    folder or search for \'ovunque.tech@gmail.com\'.</string>
+    <string name="button_login_to_account">Login to your account</string>
+
+    <!-- Strings related to Navigation Drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_parking">Home</string>
+    <string name="nav_find_parking">Find Parking</string>
+    <string name="nav_my_trips">Trips</string>
+    <string name="nav_my_wallet">Wallet</string>
+    <string name="nav_vehicles">My Cars</string>
+    <string name="nav_society">My Society</string>
+    <string name="nav_referral">Refer &amp; Earn</string>
+    <string name="nav_share">Share</string>
+    <string name="nav_feedback">Help \&amp; Support</string>
+    <string name="nav_rate_us">Rate us</string>
+    <string name="nav_my_profile">My Profile</string>
+    <string name="nav_logout">Logout</string>
+    <string name="nav_malls">Malls</string>
+    <string name="nav_policies">Our policies</string>
+    <string name="nav_faq">FAQs</string>
+    <string name="nav_app_update">App Update</string>
+    <string name="nav_visitor_parking">Visitor Parking</string>
+
+
+    <string name="title_activity_main">Main Activity</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_service">Vehicle Service</string>
+    <string name="title_select_city">Select City</string>
+    <string name="title_activity_booking_list">All Bookings</string>
+    <string name="title_fragment_add_vehicle">Add car</string>
+    <string name="title_fragment_edit_vehicle">Edit details</string>
+    <string name="title_change_password">Change Password</string>
+    <string name="title_request_tag">Request Tag</string>
+    <string name="title_parking_booking">Book Parking</string>
+    <string name="title_recharge_details">Recharge Details</string>
+
+
+    <!-- Strings related to Parking Fragment -->
+    <string name="text_space_left">Space left</string>
+    <string name="text_recent_activity">Recent Trips</string>
+    <string name="text_entry_time">Entry</string>
+    <string name="text_exit_time">Exit</string>
+    <string name="text_no_recent_activity">No recent trips</string>
+    <string name="text_no_nearby_parking">No parking locations near your office</string>
+    <string name="total_parking_heading">Total Parking: </string>
+    <string name="text_nearby_parking">Nearby Parking</string>
+
+    <!-- Strings related to Vehicle Fragment -->
+    <string name="text_vehicle_number">Vehicle</string>
+    <string name="text_tag_id">Tag ID</string>
+    <string name="button_add_more">ADD MORE</string>
+    <string name="action_add_vehicle">ADD</string>
+
+    <!-- String related to Edit Vehicle -->
+    <string name="title_tag_id">Parkwheels Tag</string>
+    <string name="title_vehicle_number">Vehicle Number</string>
+    <string name="title_secret_code">Parkwheels Code</string>
+    <string name="title_vehicle_brand">Vehicle brand</string>
+    <string name="title_vehicle_model">Vehicle model</string>
+    <string name="hint_add_vehicle_number">Eg. DL2CAT3423</string>
+    <string name="title_vehicle_type">Vehicle Type</string>
+    <string name="hint_vehicle_brand">Eg. Hyundai</string>
+    <string name="hint_vehicle_model">Eg. I20</string>
+    <string name="hint_vehicle_color">Eg. Red</string>
+    <string name="title_vehicle_color">Vehicle color</string>
+    <string name="title_purchase_year">Year of purchase</string>
+    <string name="hint_purchase_year">Eg. 2012</string>
+    <string name="title_fuel_type">Type of engine?</string>
+    <string name="title_per_day_km">How much you drive per day?</string>
+    <string name="title_insurance_expiry">Insurance expiry date</string>
+    <string name="title_last_service">Last service date</string>
+    <string name="hint_insurance_expiry">dd/mm/yyyy</string>
+    <string name="hint_last_service">dd/mm/yyyy</string>
+    <string name="click_to_select_date">Click to select date</string>
+    <string name="click_to_select_time">Click to select time</string>
+
+    <string name="text_select_value">Select a value</string>
+    <string name="text_select_vendor">Select a vendor</string>
+
+    <string name="key_petrol">petrol</string>
+    <string name="key_diesel">diesel</string>
+    <string name="key_cng">cng</string>
+    <string name="value_petrol">Petrol</string>
+    <string name="value_diesel">Diesel</string>
+    <string name="value_cng">CNG</string>
+    <string name="key_0_10">0-10</string>
+    <string name="key_10_25">10-25</string>
+    <string name="key_25_50">25-50</string>
+    <string name="key_50_75">50-75</string>
+    <string name="key_greater_75">75+</string>
+    <string name="value_0_10">0-10 Kms</string>
+    <string name="value_10_25">10-25 Kms</string>
+    <string name="value_25_50">25-50 Kms</string>
+    <string name="value_50_75">50-75 Kms</string>
+    <string name="value_greater_75">75+ Kms</string>
+
+    <array name="array_fuel_type_keys">
+        <item>@string/text_select_value</item>
+        <item>@string/key_petrol</item>
+        <item>@string/key_diesel</item>
+        <item>@string/key_cng</item>
+    </array>
+
+    <array name="array_fuel_type_values">
+        <item>@string/text_select_value</item>
+        <item>@string/value_petrol</item>
+        <item>@string/value_diesel</item>
+        <item>@string/value_cng</item>
+    </array>
+
+    <array name="array_per_day_km_keys">
+        <item>@string/text_select_value</item>
+        <item>@string/key_0_10</item>
+        <item>@string/key_10_25</item>
+        <item>@string/key_25_50</item>
+        <item>@string/key_50_75</item>
+        <item>@string/key_greater_75</item>
+    </array>
+
+    <array name="array_per_day_km_values">
+        <item>@string/text_select_value</item>
+        <item>@string/value_0_10</item>
+        <item>@string/value_10_25</item>
+        <item>@string/value_25_50</item>
+        <item>@string/value_50_75</item>
+        <item>@string/value_greater_75</item>
+    </array>
+
+    <!-- Strings related to User Profile -->
+    <string name="title_edit_profile">My Profile</string>
+    <string name="button_edit_profile">Edit</string>
+    <string name="action_edit_details">Edit</string>
+    <string name="action_change_password">Change password</string>
+    <string name="action_edit_done">Done</string>
+    <string name="text_change_password">Change Password</string>
+    <string name="hint_full_name">Name*</string>
+    <string name="title_first_name">First Name*</string>
+    <string name="title_last_name">Last Name</string>
+    <string name="title_phone_number">Phone no*</string>
+    <string name="title_email">Email ID*</string>
+    <string name="title_gender">Gender</string>
+    <string name="title_locality">Home Address</string>
+    <string name="title_state">State</string>
+    <string name="title_city">City</string>
+    <array name="user_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+
+    <!--add shortcut dialog-->
+    <string name="title_add_shortcut">Attention</string>
+    <string name="text_add_shortcut">You can directly park using park me shortcut through just one click
+        and save time.</string>
+    <string name="button_add_shortcut">Ok Got it !</string>
+    <string name="button_not_now">Not Now</string>
+    <string name="heading_shortcuts">Shortcuts</string>
+    <string name="heading_park_me_shortcut">Park Me</string>
+    <string name="text_create_shortcut">Create shortcut</string>
+
+    <string name="text_loading_locations">Loading nearby parking locations...</string>
+
+    <string name="auto_verify_failed">Failed to automatically detect OTP. Please Enter manually or
+        request OTP again</string>
+
+
+    <!-- Strings related to change password -->
+    <string name="hint_old_password">Old password</string>
+    <string name="hint_new_password">New password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="button_update">Update</string>
+    <string name="button_cancel">Cancel</string>
+
+    <!-- Strings related to Referral Fragment -->
+    <string name="text_referral_primary">Ask your friend to buy Parkwheels tag using your promo code and get Rs. 50 on every successful purchase.</string>
+    <string name="text_referral_secondary">You never know when you may get lucky.</string>
+
+    <!-- Strings related to Request Tag -->
+    <string name="text_request_tag_primary">Buy Parkwheels Tag</string>
+    <string name="text_request_tag_secondary">Get tag for Rs. 100 using referral code and enjoy our services</string>
+
+    <!-- Strings related to my wallet -->
+    <string name="Rs">\u20B9</string>
+    <string name="button_add_money">+ ADD MONEY</string>
+    <string name="error_request_rejected">It seems that you recharge request has been rejected by the operator. Kindly contact him directly.</string>
+    <string name="error_request_failure">Something wnt wrong. Do you want to retry? </string>
+    <string name="service_not_available">We are working hard to bring this service to you as soon as possible. Stay tuned with us to get updates.</string>
+    <string name="title_add_money">Add Money</string>
+    <string name="recharge_done">Wallet recharged successfully!</string>
+
+    <string name="approval_denied">Your request has been rejected by the operator. Kindly contact operator directly</string>
+    <string name="connectivity_lost">It seems you are far from Parkwheels zone, Please move close to entry point and try again.</string>
+
+    <!-- String related to User Feedback -->
+    <string name="heading_feedback">For quick support, please refer to our FAQs.</string>
+    <string name="sub_heading_feedback">Have any other query? Please tell us how can we help you.</string>
+    <string name="hint_enter_message">Write your feedback</string>
+    <string name="button_submit">Submit</string>
+
+    <!-- Strings related to Complaint Activity -->
+    <string name="button_register_complaint">Register new complaint</string>
+    <string name="title_all_complaints">All Complaints</string>
+    <string name="title_book_complaint">Book Complaint</string>
+    <string name="hint_complaint_title">Enter Complaint Title</string>
+    <string name="hint_complaint_description">Enter description</string>
+    <string name="complaint_type_normal">Normal</string>
+    <string name="complaint_type_emergency">Emergency</string>
+    <string name="error_complaint_title">Enter Title</string>
+
+    <!-- Strings related to Visitor Activity -->
+    <string name="title_add_visitor">Add Visitor</string>
+    <string name="title_all_visitors">All Visitors</string>
+
+    <!-- Strings related to Visitor Details Fragment -->
+    <string name="button_accept">Accept</string>
+    <string name="button_decline">Decline</string>
+    <string name="text_accepted">Accepted</string>
+    <string name="text_declined">Declined</string>
+
+    <string name="text_no_complaints">No Complaints</string>
+    <string name="text_no_visitors">No Visitors</string>
+    <string name="text_no_society">No society added</string>
+
+    <!-- Strings related to menu -->
+    <string name="action_refresh">Refresh</string>
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_faq">FAQs</string>
+
+    <string name="add_tag">To add your office space, simply put in the details\n of Parkwheels Tag issued to you by your admin.</string>
+    <string name="customer_list_header">We feel great pride in sharing that \nour product is accepted by following companies</string>
+    <string name="text_oops">Oops!</string>
+    <string name="text_something_went_wrong">Something went wrong.</string>
+    <string name="text_check_connection">Please check your internet connection and try again.</string>
+    <string name="text_login_again">You are logged in from some other device. Please login again here.</string>
+    <string name="button_reload">Try Again</string>
+
+    <!-- Strings related to Parking Fragment -->
+    <string name="button_navigate">Navigate</string>
+
+    <!--Strings related to Mall Activity-->
+    <string name="text_mall_list_search">Search Mall, Food outlet or Brand</string>
+    <array name="store_colors">
+        <item>@color/colorAmber</item>
+        <item>@color/colorBlue500</item>
+        <item>@color/colorAccent</item>
+        <item>@color/colorBlueDark</item>
+    </array>
+
+    <string name="title_search">Search</string>
+    <string name="hint_search_malls">What are you looking for?</string>
+
+    <!-- Strings related to Car service -->
+    <string name="text_general_service">General Service</string>
+    <string name="text_vehicle_wash">Vehicle Wash</string>
+    <string name="text_vehicle_repair">Vehicle Repair</string>
+    <string name="text_vehicle_emergency">Emergency</string>
+    <string name="title_confirm_booking">Confirm Booking</string>
+    <string name="text_no_bookings">No Bookings Yet!</string>
+    <string name="action_all_bookings">All Bookings</string>
+    <string name="text_terms_and_conditions">Terms and Conditions</string>
+    <string name="title_Tag_control">Tag Control</string>
+    <string name="help">Help</string>
+
+
+    <!-- Strings related to Request Tag -->
+    <string name="title_faq">How it works?</string>
+    <string name="title_request_tag_faq_point_1">Invite Friends &amp; Family</string>
+    <string name="subtitle_request_tag_faq_point_1">Share the Parkwheels app with everyone you know and ask them to buy parkwheels tag worth Rs. 100 only.</string>
+    <string name="title_request_tag_faq_point_2">Win Rewards</string>
+    <string name="subtitle_request_tag_faq_point_2">On every successful purchase you receive Rs 50, your friend receive upto Rs 500 off on their first car service.</string>
+    <string name="title_request_tag_faq_point_3">Shop with Rewards</string>
+    <string name="subtitle_request_tag_faq_point_3">Unlimited refer and earn. Use the reward money to pay parking charges, get you car clean / service or to buy car accessories on parkwheels app.</string>
+
+    <!--String related to OTP Verification-->
+    <string name="heading_otp_verification">We\'ve sent an SMS with verification code to:</string>
+    <string name="heading_enter_code_manual">Enter verification code manually</string>
+    <string name="text_resend_code">Resend code</string>
+    <string name="button_verify">VERIFY</string>
+    <string name="error_invalid_code">Invalid code</string>
+
+    <!-- Strings related to login -->
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!--rate app dialog-->
+    <string name="rate_app_heading">Rate your experience</string>
+    <string name="rate_app_button">Rate our app on play store now</string>
+    <string name="rate_app_review">Do you want to write something?</string>
+    <string name="text_feedback_done">Thank you for your valuable feedback. Our support team will
+        contact you soon.</string>
+
+    <!--With helmet dialog-->
+    <string name="text_leaving_helmet">Leaving helmet?</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="text_remember_my_choice">Remember my choice</string>
+    <string name="text_done">DONE</string>
+    <string name="text_detail_receipt"><u>Details?</u></string>
+    <string name="free_parking_text">You got free parking worth \u20B9 __AMOUNT__</string>
+    <string name="text_wallet_balance">Wallet Balance \u20B9 __AMOUNT__</string>
+    <string name="download_receipts">Download Receipts</string>
+    <string name="heading_select_duration">Please select required duration</string>
+    <string name="heading_starting_day">Start from</string>
+    <string name="heading_end_date">To</string>
+    <string name="clear">Clear</string>
+    <string name="get_receipts">Get Receipts</string>
+
+    <string name="text_sign_in"><B>ALREADY REGISTERED? LOGIN</B></string>
+    <string name="text_terms">By creating an account I agree to the <b>"Terms and Conditions "</b> and our
+    <b> "Privacy Policy."</b></string>
+    <string name="text_terms_login">By logging in I agree to the <b>"Terms and Conditions "</b> and our
+    <b> "Privacy Policy."</b></string>
+    <string name="text_otp_description">We have sent you a 4 digit verification code on</string>
+    <string name="text_enter_code">Enter Verification Code</string>
+    <string name="text_agree_terms">By logging in I agree to the <b>"Terms and Conditions "</b> and our
+    <b> "Privacy Policy"</b></string>
+    <string name="text_continue_by_agree_terms">To continue with the application, please read and agree to the <b>"Terms and Conditions "</b> and our
+    <b> "Privacy Policy"</b></string>
+    <string name="text_booking_instructions">*Please select your arrival window very carefully to avoid last minute and automatic cancellations.</string>
+
+
+    <string name="text_processing">Processing</string>
+    <string name="text_processing_message">Your request is processing</string>
+    <string name="text_successful">Successful</string>
+    <string name="text_successful_message">Your request was successful</string>
+    <string name="text_failed">Failed</string>
+    <string name="text_failed_message">Your request failed</string>
+
+    <!--Society related strings-->
+
+    <array name="array_vendor_value">
+        <item>@string/value_uber</item>
+        <item>@string/value_ola</item>
+        <item>@string/value_other</item>
+    </array>
+
+    <array name="array_vendor_keys">
+        <item>@string/key_uber</item>
+        <item>@string/key_ola</item>
+        <item>@string/key_other</item>
+    </array>
+
+    <array name="array_gender_key">
+        <item>@string/key_male</item>
+        <item>@string/key_female</item>
+    </array>
+
+    <array name="array_gender_value">
+        <item>@string/value_male</item>
+        <item>@string/value_female</item>
+    </array>
+
+    <string name="key_male">male</string>
+    <string name="key_female">female</string>
+    <string name="value_male">Male</string>
+    <string name="value_female">Female</string>
+
+
+    <string name="value_uber">UBER</string>
+    <string name="value_ola">OLA</string>
+    <string name="value_other">Other</string>
+
+    <string name="key_uber">uber</string>
+    <string name="key_ola">ola</string>
+    <string name="key_other">other</string>
+
+
+    <!--CleverTap Main Account Credentials-->
+    <string name="ct_main_account_id" tools:ignore="TypographyDashes">8R9-845-ZK5Z</string>
+    <string name="ct_main_account_secret">54b-c2b</string>
+    <!--CleverTap Test Account Credentials-->
+    <string name="ct_test_account_id" tools:ignore="TypographyDashes">TEST-9R9-845-ZK5Z</string>
+    <string name="ct_test_account_secret">TEST-54b-c2c</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add_home_address_header">Let us know where you live and... \nGet a chance to WIN a surprise from us &#x1F609;</string>
+
+    <string name="sms_permission_dialog">To easily verify your number, Parkwheels can automatically detect your OTP if you allow Parkwheels to view SMS messages.</string>
+
+    <string name="battery_optimisation_dialog">You may not be receiving all the notification from Parkwheels app. This is due to recent changes Android have incorporated in their latest version. Please click Allow in the next dialog box to solve this issue.</string>
+    <string name="string_intro_to_wallet">Now link your Paytm Wallet with the App and pay parking charges automatically at Parkwheels powered locations directly with your Parkwheels Tag.</string>
+    <string name="click_here_to_know_more_about_tag_locking"><u>Read more</u></string>
+    <string name="tag_lock_help_msg">Car locking enables you to control the entry/exit of your vehicle. You can either lock your car manually or can set a schedule for auto locking. You get a theft alarm on exit if someone tries to exit your car in locked state.</string>
+    <string name="sample_invitation_text"><b>Amit Raturi</b> has invited yout to <b>Candor Techspace</b> on <b>23rd oct 2019</b></string>
+
+    <string name="sample_text_loading">Loading..</string>
+
+    <string name="text_error">Error</string>
+    <string name="disable_receipt_text">Exit receipt print is disabled, Please enable it from profile settings if required</string>
+    <string name="helmet_quantity">Helmet Quantity</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="has">#</string>
+    <string name="_0">0</string>
+    <string name="c">C</string>
+    <string name="app_running_online_mode">App is running in online mode</string>
+    <string name="app_running_oflline_mode">App is running in Local mode</string>
 </resources>

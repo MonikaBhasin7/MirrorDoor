@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_nothing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:id="@+id/rl_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_error"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_no_connection"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyle"
+            android:indeterminateTint="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_loading_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress_bar"
+            android:fontFamily="@font/titillium_web"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:paddingRight="20dp"
+            android:text="@string/sample_text_loading"
+            android:visibility="gone"
+            android:textColor="@color/label_color"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_center"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/titillium_web_semibold"
+        android:text="@string/text_oops"
+        android:textColor="@color/label_color"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_error_message_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@id/tv_error_title"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/titillium_web"
+        android:text="@string/text_something_went_wrong"
+        android:textColor="@color/textColorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_error_message_secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_error_message_primary"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:fontFamily="@font/titillium_web"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_check_connection"
+        android:textColor="@color/label_color"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bt_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_error_message_secondary"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_marginTop="30dp"
+        style="@style/CustomButton"
+        android:letterSpacing="0.09"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="RETRY" />
+
+</RelativeLayout>
