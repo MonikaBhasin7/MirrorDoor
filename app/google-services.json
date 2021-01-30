@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558134346161",
+    "project_id": "sample-33bb5",
+    "storage_bucket": "sample-33bb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558134346161:android:cf2b2540fc364f68e2bd90",
+        "android_client_info": {
+          "package_name": "com.krsna.mirrordoor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558134346161-6qocbqci4q5ul7uft180jhjva9reemjc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbXBl_Cmud4KkZnfdNph3XOBEmRIyBhXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558134346161-6qocbqci4q5ul7uft180jhjva9reemjc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
