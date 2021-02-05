@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
@@ -37,6 +38,10 @@ abstract class BaseFragment : Fragment(), CoroutineScope {
     private lateinit var tvErrorMessagePrimary: TextView
     private lateinit var tvErrorMessageSecondary: TextView
     private lateinit var btRetry: Button
+
+    fun showToast(data: String) {
+        Toast.makeText(mActivity.applicationContext, data, Toast.LENGTH_SHORT).show()
+    }
 
     /**
      *   Events are exposed to client fragment using these abstract methods
