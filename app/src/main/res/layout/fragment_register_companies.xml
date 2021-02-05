@@ -12,7 +12,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_company_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/company_name"
@@ -37,13 +37,13 @@
                 android:paddingRight="16dp"
                 android:textColor="#37474f"
                 android:textColorHint="@color/text_color_black"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_website_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_website"
@@ -68,14 +68,14 @@
                 android:paddingRight="16dp"
                 android:textColor="#37474f"
                 android:textColorHint="@color/text_color_black"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_type_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/add_type"
@@ -100,7 +100,7 @@
                 android:paddingRight="16dp"
                 android:textColor="#37474f"
                 android:textColorHint="@color/text_color_black"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,6 +119,7 @@
             android:text="@string/add"
             android:textColor="@color/white"
             android:textAllCaps="false"
+            style=""
             android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
