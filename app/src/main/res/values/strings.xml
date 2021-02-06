@@ -6,4 +6,6 @@
     <string name="add_website">Add Website</string>
     <string name="add_type">Add Type</string>
     <string name="add">Add</string>
+    <string name="add_company">Add Company</string>
+    <string name="list_companies">List Companies</string>
 </resources>

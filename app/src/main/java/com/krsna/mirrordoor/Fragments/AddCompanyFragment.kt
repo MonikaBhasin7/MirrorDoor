@@ -9,22 +9,18 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.base.models.BaseResponse
-import com.example.base.ui.BaseFragment
 import com.example.base.ui.BaseViewModelFactory
-import com.google.firebase.firestore.FirebaseFirestore
 import com.krsna.mirrordoor.Common.FireStore
 import com.krsna.mirrordoor.Model.Company
 import com.krsna.mirrordoor.R
 import com.krsna.mirrordoor.Repository.CompanyRepo
 import com.krsna.mirrordoor.ViewModel.CompanyVM
-import com.krsna.mirrordoor.databinding.FragmentRegisterCompaniesBinding
-import managers.PreferencesManager
+import com.krsna.mirrordoor.databinding.FragmentAddCompanyBinding
 import ui.observers.ApiObserver
 
-class RegisterCompanyFragment : Fragment(), View.OnClickListener  {
+class AddCompanyFragment : Fragment(), View.OnClickListener  {
 
-    private lateinit var dataBinding: FragmentRegisterCompaniesBinding
-    lateinit var firebaseFirestore: FirebaseFirestore
+    private lateinit var dataBinding: FragmentAddCompanyBinding
 
     private val companyViewModel: CompanyVM by lazy {
         ViewModelProviders.of(activity!!, BaseViewModelFactory {
@@ -39,7 +35,6 @@ class RegisterCompanyFragment : Fragment(), View.OnClickListener  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataBinding.btnAdd.setOnClickListener(this)
-        firebaseFirestore = FireStore.getInstance()
         companyViewModel.addCompanyResponse.observe(activity!!, auditReportObserver)
     }
 
@@ -50,13 +45,13 @@ class RegisterCompanyFragment : Fragment(), View.OnClickListener  {
         savedInstanceState: Bundle?
     ): View? {
         dataBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_register_companies, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_add_company, container, false)
         return dataBinding.root
     }
 
 
     companion object {
-        fun newInstance() = RegisterCompanyFragment()
+        fun newInstance() = AddCompanyFragment()
     }
 
     override fun onClick(v: View?) {

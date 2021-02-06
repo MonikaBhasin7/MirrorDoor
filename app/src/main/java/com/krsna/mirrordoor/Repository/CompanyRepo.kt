@@ -1,6 +1,5 @@
 package com.krsna.mirrordoor.Repository
 
-import android.widget.Toast
 import com.example.base.models.BaseResponse
 import com.google.firebase.firestore.FirebaseFirestore
 import com.krsna.mirrordoor.Interfaces.Callbacks
@@ -21,5 +20,16 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
                     callback.companyAddedFailure("Not Added")
                 }
         }
+    }
+
+    fun showCompanies(callback: Callbacks.ShowCompanyCallback) {
+        fireStoreDatabase.collection("company")
+            .get()
+            .addOnSuccessListener { result ->
+
+            }
+            .addOnFailureListener { exception ->
+
+            }
     }
 }
