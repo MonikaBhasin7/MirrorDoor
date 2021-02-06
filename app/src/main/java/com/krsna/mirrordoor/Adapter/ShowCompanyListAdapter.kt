@@ -40,7 +40,10 @@ class ShowCompanyListAdapter(
             binding.tvWebsite.text = item.website
             binding.tvType.text = item.type
             if(item.reviews != null) {
+                binding.tvReviews.visibility = View.VISIBLE
                 binding.tvReviews.text = "⭐ ${item.reviews.toString()}"
+            } else {
+                binding.tvReviews.visibility = View.GONE
             }
         }
     }

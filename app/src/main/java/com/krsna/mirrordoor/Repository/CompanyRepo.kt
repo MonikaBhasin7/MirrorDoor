@@ -4,6 +4,7 @@ import com.example.base.models.BaseResponse
 import com.google.firebase.firestore.FirebaseFirestore
 import com.krsna.mirrordoor.Interfaces.Callbacks
 import com.krsna.mirrordoor.Model.Company
+import com.krsna.mirrordoor.Model.ShowCompanyPayload
 
 class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
 
@@ -22,9 +23,10 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
         }
     }
 
-    fun showCompanies(callback: Callbacks.ShowCompanyCallback) {
+    fun showCompanies(showCompanyPayload: ShowCompanyPayload, callback: Callbacks.ShowCompanyCallback) {
         val companyList : ArrayList<Company> = arrayListOf()
         fireStoreDatabase.collection("Company")
+            .whereEqualTo("reviews", showCompanyPayload.getReview())
             .get()
             .addOnSuccessListener { response ->
                 for(item in response) {

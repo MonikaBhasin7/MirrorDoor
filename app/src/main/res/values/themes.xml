@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MirrorDoor" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.MirrorDoor" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -165,5 +165,15 @@
         <item name="android:windowNoTitle">true</item>
 
         <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Theme.NoActionBar" parent="Theme.MirrorDoor">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="Theme.MyActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
     </style>
 </resources>

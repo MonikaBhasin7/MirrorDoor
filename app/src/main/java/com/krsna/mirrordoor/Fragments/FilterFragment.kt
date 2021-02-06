@@ -51,7 +51,7 @@ class FilterFragment : BaseBottomSheetDialogFragment(), View.OnClickListener {
                 showReviewMenuPopup(dataBinding.cvReviews, dataBinding.txtReviews, R.menu.base)
             }
             R.id.btn_submit -> {
-                companyViewModel.filterReview = dataBinding.txtReviews.toString()
+                companyViewModel.filterReview = dataBinding.txtReviews.text.toString()
                 companyViewModel.showCompanies()
                 dismiss()
             }

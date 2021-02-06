@@ -4,7 +4,7 @@
     <item
         android:id="@+id/menu_filter"
         android:title="@string/filter"
-        android:icon="@color/color777"
+        android:icon="@color/black_text_color"
         app:showAsAction="always"
         android:visible="true" />
 </menu>

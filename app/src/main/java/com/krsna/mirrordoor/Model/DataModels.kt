@@ -23,3 +23,21 @@ class Company {
         return this
     }
 }
+
+class ShowCompanyPayload {
+
+    private var review: String? = null
+
+    fun setReview(review: String?): ShowCompanyPayload {
+        if(review != null) {
+            this.review = review
+        } else {
+            this.review = "-1"
+        }
+        return this
+    }
+
+    fun getReview() : Int? {
+        return this.review?.toInt()
+    }
+}

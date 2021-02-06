@@ -8,6 +8,7 @@ import com.example.base.models.BaseResponse
 import com.example.base.ui.BaseViewModel
 import com.krsna.mirrordoor.Interfaces.Callbacks
 import com.krsna.mirrordoor.Model.Company
+import com.krsna.mirrordoor.Model.ShowCompanyPayload
 import com.krsna.mirrordoor.Repository.CompanyRepo
 
 class CompanyVM(private val companyRepo: CompanyRepo, app: Application) : BaseViewModel(app) {
@@ -42,7 +43,8 @@ class CompanyVM(private val companyRepo: CompanyRepo, app: Application) : BaseVi
     }
 
     fun showCompanies() {
-        companyRepo.showCompanies(object:Callbacks.ShowCompanyCallback{
+        var showCompanyPayload = ShowCompanyPayload().setReview(this.filterReview)
+        companyRepo.showCompanies(showCompanyPayload, object:Callbacks.ShowCompanyCallback{
             override fun showCompanySuccess(response: List<Company>) {
                 updateLiveData(response, _showCompanyResponse)
             }
