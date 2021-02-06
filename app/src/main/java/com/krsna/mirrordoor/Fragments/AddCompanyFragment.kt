@@ -35,7 +35,7 @@ class AddCompanyFragment : Fragment(), View.OnClickListener  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataBinding.btnAdd.setOnClickListener(this)
-        companyViewModel.addCompanyResponse.observe(activity!!, auditReportObserver)
+        companyViewModel.addCompanyResponse.observe(activity!!, addCompanyObserver)
     }
 
 
@@ -64,19 +64,27 @@ class AddCompanyFragment : Fragment(), View.OnClickListener  {
     }
 
     private fun addCompanyData() {
-        if(dataBinding.etCompanyName.text.isNullOrEmpty() || dataBinding.etWebsiteName.text.isNullOrEmpty() || dataBinding.etTypeName.text.isNullOrEmpty()) {
-            Toast.makeText(activity?.applicationContext, "Please add all information", Toast.LENGTH_SHORT).show()
+        if (dataBinding.etCompanyName.text.isNullOrEmpty()
+            || dataBinding.etWebsiteName.text.isNullOrEmpty()
+            || dataBinding.etTypeName.text.isNullOrEmpty()
+            || dataBinding.etReviews.text.isNullOrEmpty()
+        ) {
+            Toast.makeText(
+                activity?.applicationContext,
+                "Please add all information",
+                Toast.LENGTH_SHORT
+            ).show()
             return
         }
-        val company = Company(dataBinding.etCompanyName.text.toString(),
-                dataBinding.etWebsiteName.text.toString(),
-                dataBinding.etTypeName.text.toString()
-        )
+        val company = Company().setCompany(dataBinding.etCompanyName.text.toString())
+            .setWebsite(dataBinding.etWebsiteName.text.toString())
+            .setType(dataBinding.etTypeName.text.toString())
+            .setReviews(dataBinding.etReviews.text.toString().toInt())
         companyViewModel.addCompany(company)
 
     }
 
-    private val auditReportObserver = object : ApiObserver<BaseResponse>() {
+    private val addCompanyObserver = object : ApiObserver<BaseResponse>() {
         override fun onSuccess(data: BaseResponse) {
             Toast.makeText(activity, data.message, Toast.LENGTH_SHORT).show()
         }

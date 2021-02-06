@@ -20,6 +20,11 @@ class CompanyVM(private val companyRepo: CompanyRepo, app: Application) : BaseVi
         MutableLiveData()
     val showCompanyResponse: LiveData<ApiResponseWrapper<List<Company>>> get() = _showCompanyResponse
 
+    fun refreshLiveData() {
+        _addCompanyResponse = MutableLiveData()
+        _showCompanyResponse = MutableLiveData()
+    }
+
     fun addCompany(company: Company) {
         companyRepo.addCompany(company, object :Callbacks.AddCompanyCallback{
             override fun companyAddedSuccess(response: BaseResponse) {

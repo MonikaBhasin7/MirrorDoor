@@ -19,4 +19,8 @@ interface Callbacks {
         fun openAddCompanyFragment()
         fun openShowCompanyFragment()
     }
+
+    interface ShowCompanyListAdapterListener {
+
+    }
 }

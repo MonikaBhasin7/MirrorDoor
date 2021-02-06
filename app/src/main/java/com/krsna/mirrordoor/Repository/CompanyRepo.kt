@@ -23,13 +23,21 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
     }
 
     fun showCompanies(callback: Callbacks.ShowCompanyCallback) {
-        fireStoreDatabase.collection("company")
+        val companyList : ArrayList<Company> = arrayListOf()
+        fireStoreDatabase.collection("Company")
             .get()
-            .addOnSuccessListener { result ->
-
+            .addOnSuccessListener { response ->
+                for(item in response) {
+                    val company = Company().setCompany(item.getString("company_name"))
+                        .setWebsite(item.getString("website"))
+                        .setType(item.getString("type"))
+                        .setReviews(item.getLong("reviews")?.toInt())
+                    companyList.add(company)
+                }
+                callback.showCompanySuccess(companyList)
             }
             .addOnFailureListener { exception ->
-
+                callback.showCompanyFailure(exception.toString())
             }
     }
 }

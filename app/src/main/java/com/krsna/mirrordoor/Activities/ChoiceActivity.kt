@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.base.ui.BaseActivity
 import com.krsna.mirrordoor.Fragments.ChoiceFragment
 import com.krsna.mirrordoor.Fragments.AddCompanyFragment
+import com.krsna.mirrordoor.Fragments.ShowCompanyFragment
 import com.krsna.mirrordoor.Interfaces.Callbacks
 import com.krsna.mirrordoor.R
 
@@ -32,7 +33,10 @@ class ChoiceActivity : BaseActivity(), Callbacks.OpenFragments {
     }
 
     override fun openShowCompanyFragment() {
-
+        fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.fl_content, ShowCompanyFragment.newInstance())
+        fragmentTransaction.addToBackStack("ShowCompanyFragment")
+        fragmentTransaction.commit()
     }
 
 }

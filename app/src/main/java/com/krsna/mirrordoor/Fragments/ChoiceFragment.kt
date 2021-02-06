@@ -38,6 +38,7 @@ class ChoiceFragment : Fragment(), View.OnClickListener {
         super.onActivityCreated(savedInstanceState)
 
         dataBinding.cvAddCompany.setOnClickListener(this)
+        dataBinding.cvShowCompany.setOnClickListener(this)
     }
 
     companion object {
