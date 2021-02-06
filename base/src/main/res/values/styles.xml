@@ -14,4 +14,10 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
+    <style name="ToolbarTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/titillium_web</item>
+        <item name="android:textColor">@color/black_text_color</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

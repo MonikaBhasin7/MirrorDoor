@@ -20,6 +20,8 @@ class CompanyVM(private val companyRepo: CompanyRepo, app: Application) : BaseVi
         MutableLiveData()
     val showCompanyResponse: LiveData<ApiResponseWrapper<List<Company>>> get() = _showCompanyResponse
 
+    var filterReview : String? = null
+
     fun refreshLiveData() {
         _addCompanyResponse = MutableLiveData()
         _showCompanyResponse = MutableLiveData()

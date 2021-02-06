@@ -9,4 +9,7 @@
     <string name="add_company">Add Company</string>
     <string name="list_companies">List Companies</string>
     <string name="reviews">Reviews</string>
+    <string name="MirrorDoor">MirrorDoor</string>
+    <string name="filter">Filter</string>
+    <string name="submit">Submit</string>
 </resources>

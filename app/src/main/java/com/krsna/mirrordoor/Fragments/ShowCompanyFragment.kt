@@ -1,11 +1,10 @@
 package com.krsna.mirrordoor.Fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +36,10 @@ class ShowCompanyFragment : Fragment(), Callbacks.ShowCompanyListAdapterListener
         }).get(CompanyVM::class.java)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -72,6 +75,26 @@ class ShowCompanyFragment : Fragment(), Callbacks.ShowCompanyListAdapterListener
         override fun onFailure(errorMessage: String) {
             Toast.makeText(activity, errorMessage, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        inflater.inflate(R.menu.menu_on_showcompanyfragment, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_filter -> {
+                FilterFragment.newInstance()
+                    .show(childFragmentManager, null)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

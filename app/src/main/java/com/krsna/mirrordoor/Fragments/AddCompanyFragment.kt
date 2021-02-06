@@ -81,7 +81,6 @@ class AddCompanyFragment : Fragment(), View.OnClickListener  {
             .setType(dataBinding.etTypeName.text.toString())
             .setReviews(dataBinding.etReviews.text.toString().toInt())
         companyViewModel.addCompany(company)
-
     }
 
     private val addCompanyObserver = object : ApiObserver<BaseResponse>() {

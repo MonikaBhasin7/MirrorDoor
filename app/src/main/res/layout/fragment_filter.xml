@@ -52,6 +52,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_reviews"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            style="@style/Theme.MirrorDoor.Button"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
