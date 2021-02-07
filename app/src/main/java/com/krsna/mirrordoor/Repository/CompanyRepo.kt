@@ -39,6 +39,7 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
         collectionReference = null
         collectionReference = fireStoreDatabase.collection("Company")
         isFirst = true
+        
         CoroutineScope(Dispatchers.IO).launch {
             addReviewFilter(showCompanyPayload.getReview())
             addTypeFilter("private")
