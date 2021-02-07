@@ -62,7 +62,12 @@ class ShowCompanyFragment : Fragment(), Callbacks.ShowCompanyListAdapterListener
             )
         dataBinding.rvShowCompany.adapter = showCompanyListAdapter
 
-        companyViewModel.showCompanies()
+        //companyViewModel.showCompanies()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        companyViewModel.showCompaniesInRealTime()
     }
 
     private val showCompanyObserver = object : ApiObserver<List<Company>>() {

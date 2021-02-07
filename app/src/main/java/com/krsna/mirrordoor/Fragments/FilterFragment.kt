@@ -52,7 +52,8 @@ class FilterFragment : BaseBottomSheetDialogFragment(), View.OnClickListener {
             }
             R.id.btn_submit -> {
                 companyViewModel.filterReview = dataBinding.txtReviews.text.toString()
-                companyViewModel.showCompanies()
+                //companyViewModel.showCompanies()
+                companyViewModel.showCompaniesInRealTime()
                 dismiss()
             }
         }

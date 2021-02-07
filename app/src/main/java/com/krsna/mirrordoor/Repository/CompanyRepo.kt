@@ -1,7 +1,6 @@
 package com.krsna.mirrordoor.Repository
 
 import com.example.base.models.BaseResponse
-import com.example.base.utils.AppLogger
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -10,8 +9,8 @@ import com.krsna.mirrordoor.Model.Company
 import com.krsna.mirrordoor.Model.ShowCompanyPayload
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.DisposableHandle
 import kotlinx.coroutines.launch
+
 
 class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
 
@@ -30,16 +29,48 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
         }
     }
 
-    private var collectionReference : CollectionReference? = null
-    private var query : Query ? = null
-    private var isFirst = true
-    fun showCompanies(showCompanyPayload: ShowCompanyPayload, callback: Callbacks.ShowCompanyCallback) {
+    fun showCompaniesInRealTime(
+        showCompanyPayload: ShowCompanyPayload,
+        callback: Callbacks.ShowCompanyCallback
+    ) {
         val companyList: ArrayList<Company> = arrayListOf()
         query = null
         collectionReference = null
         collectionReference = fireStoreDatabase.collection("Company")
         isFirst = true
-        
+
+        CoroutineScope(Dispatchers.IO).launch {
+            addReviewFilter(showCompanyPayload.getReview())
+            addTypeFilter("private")
+
+            val callReference = if(isFirst) {
+                getCollectionReference()
+            } else getQueryReference()
+            callReference?.addSnapshotListener{ documents, _ ->
+                for (doc in documents!!) {
+                    if (doc.exists()) {
+                        val company: Company = doc.toObject(Company::class.java)
+                        companyList.add(company)
+                    }
+                }
+                callback.showCompanySuccess(companyList)
+            }
+        }
+    }
+
+    private var collectionReference : CollectionReference? = null
+    private var query : Query ? = null
+    private var isFirst = true
+    fun showCompanies(
+        showCompanyPayload: ShowCompanyPayload,
+        callback: Callbacks.ShowCompanyCallback
+    ) {
+        val companyList: ArrayList<Company> = arrayListOf()
+        query = null
+        collectionReference = null
+        collectionReference = fireStoreDatabase.collection("Company")
+        isFirst = true
+
         CoroutineScope(Dispatchers.IO).launch {
             addReviewFilter(showCompanyPayload.getReview())
             addTypeFilter("private")
@@ -61,13 +92,13 @@ class CompanyRepo(private val fireStoreDatabase: FirebaseFirestore) {
             }
         }
     }
-    private fun addReviewFilter(review: Int? ) {
+    private fun addReviewFilter(review: Int?) {
         if (isFirst) {
             if (review != -1) {
-                query = collectionReference?.whereEqualTo("reviews", 3)!!
+                query = collectionReference?.whereEqualTo("reviews", review)!!
                 isFirst = false
             }
-        } else query?.whereEqualTo("reviews", 3)
+        } else query?.whereEqualTo("reviews", review)
 
     }
 

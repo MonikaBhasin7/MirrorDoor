@@ -56,4 +56,19 @@ class CompanyVM(private val companyRepo: CompanyRepo, app: Application) : BaseVi
             }
         })
     }
+
+    fun showCompaniesInRealTime() {
+        var showCompanyPayload = ShowCompanyPayload().setReview(this.filterReview)
+        companyRepo.showCompaniesInRealTime(showCompanyPayload, object:Callbacks.ShowCompanyCallback{
+            override fun showCompanySuccess(response: List<Company>) {
+                updateLiveData(response, _showCompanyResponse)
+            }
+
+            override fun showCompanyFailure(error: String?) {
+                if (error != null) {
+                    updateLiveDataWithError(error, _showCompanyResponse)
+                }
+            }
+        })
+    }
 }
