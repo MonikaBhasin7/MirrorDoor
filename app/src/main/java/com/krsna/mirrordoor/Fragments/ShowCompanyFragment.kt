@@ -72,9 +72,11 @@ class ShowCompanyFragment : Fragment(), Callbacks.ShowCompanyListAdapterListener
 
     private val showCompanyObserver = object : ApiObserver<List<Company>>() {
         override fun onSuccess(data: List<Company>) {
-            mCompanyList.clear()
+            //mCompanyList.clear()
             mCompanyList.addAll(data)
             showCompanyListAdapter.notifyDataSetChanged()
+
+            companyViewModel.showCompaniesInRealTime()
         }
 
         override fun onFailure(errorMessage: String) {
